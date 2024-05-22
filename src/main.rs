@@ -1,7 +1,7 @@
 mod contract;
 
 use axum::{routing::get, Router};
-use crate::contract::controller::contract_controller::{get_routes};
+use contract::get_routes;
 
 #[tokio::main]
 async fn main() {
