@@ -3,6 +3,15 @@ name = "rust-api"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[package.metadata.scripts]
+dev = "cargo watch -q -c -w src/ -x run"
+lint = "cargo clippy -p rust-api -- --no-deps"
+lint-fix = "cargo clippy --fix -p rust-api --allow-dirty -- --no-deps"
+
 
 [dependencies]
+axum = "0.7.5"
+tokio = { version = "1.37.0", features = ["full"] }
+tower = "0.4.13"
+serde_json = "1.0.116"
